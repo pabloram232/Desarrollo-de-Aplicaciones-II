@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>#{str.tortaListTitle}</title>
+</h:head>
+<h:body>
+	<ui:composition template="/templates/template.xhtml">
+		<ui:define name="contenido">
+			<h2>#{str.tortaListTitle}</h2>
+			<h:form>
+				<p:commandButton value="#{str.buttonAdd}"
+					action="#{tortaBean.agregar()}"></p:commandButton>
+			</h:form>
+			<p:dataTable value="#{tortaBean.tortas}" var="t">
+				<p:column headerText="#{str.action}">
+				<h:form>
+					<h:commandButton value="#{str.buttonEdit}"
+						action="#{tortaBean.editar(t)}"></h:commandButton>
+					</h:form>
+				</p:column>
+				
+				<p:column headerText="#{str.tortaNameHeader}">
+					<p:outputLabel value="#{t.nombre}"></p:outputLabel>
+				</p:column>
+
+				
+				<p:column headerText="#{str.tortaPriceHeader}">
+					<p:outputLabel value="#{t.price}"></p:outputLabel>
+				</p:column>
+				
+				<p:column headerText="#{str.tortaTypeHeader}">
+					<p:outputLabel value="#{t.tipo_bolillo}"></p:outputLabel>
+				</p:column>
+				
+				
+			</p:dataTable>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

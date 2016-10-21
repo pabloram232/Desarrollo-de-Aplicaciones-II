@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>#{str.UniversidadListTitle}</title>
+</h:head>
+<h:body>
+	<ui:composition template="/templates/template.xhtml">
+		<ui:define name="contenido">
+			<h2>#{str.UniversidadListTitle}</h2>
+			<h:form>
+				<p:commandButton value="#{str.buttonAdd}"
+					action="#{universidadBean.agregar()}"></p:commandButton>
+			</h:form>
+			<p:dataTable value="#{universidadBean.universidades}" var="u">
+				<p:column headerText="#{str.action}">
+				<h:form>
+					<h:commandButton value="#{str.buttonEdit}"
+						action="#{universidadBean.editar(u)}"></h:commandButton>
+					</h:form>
+				</p:column>
+				
+				<p:column headerText="#{str.universidadNameHeader}">
+					<p:outputLabel value="#{u.nombre}"></p:outputLabel>
+				</p:column>
+
+				
+				<p:column headerText="#{str.universidadLocationHeader}">
+					<p:outputLabel value="#{u.ubicacion}"></p:outputLabel>
+				</p:column>
+                            <p:column headerText="#{str.universidadTypeHeader}">
+					<p:outputLabel value="#{u.tipo}"></p:outputLabel>
+				</p:column>
+				
+				
+				
+			</p:dataTable>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

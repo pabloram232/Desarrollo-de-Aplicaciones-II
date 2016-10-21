@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>#{str.carreraFormTitle}</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/template.xhtml">
+            <ui:define name="contenido">
+                <h2>#{str.carreraFormHeader}</h2>
+                <p:fieldset legend="#{str.carreraLegendForm}">
+                    <h:form>
+                        <h:panelGrid columns="5">
+
+                            <p:inputText placeholder="#{str.carreraNombrePrompt}"
+                                         value="#{carreraBean.carrera.nombre}" 
+                                         style="padding-top:0px; height:24px" ></p:inputText>
+
+                            <p:inputText placeholder="#{str.carreraDescripcionPrompt}"
+                                         value="#{carreraBean.carrera.descripcion}" 
+                                         style="padding-top:0px; height:24px" ></p:inputText>
+
+                            <p:inputText placeholder="#{str.carreraUbicacionPrompt}"
+                                         value="#{carreraBean.carrera.ubicacion}" 
+                                         style="padding-top:0px; height:24px" ></p:inputText>
+
+                            <p:inputText placeholder="#{str.carreraCantidadAlumnoPrompt}"
+                                         value="#{carreraBean.carrera.cantidadAlumno}" 
+                                         style="padding-top:0px; height:24px" ></p:inputText>
+
+                            <p:inputText placeholder="#{str.carreraCuatrimestrePrompt}"
+                                         value="#{carreraBean.carrera.cuatrimestre}" 
+                                         style="padding-top:0px; height:24px" ></p:inputText>
+
+                            <p:selectOneMenu value="#{carreraBean.carrera.facultad.id}" style="height:29px">
+                                <f:selectItems value="#{carreraBean.facultades}" var="c"
+                                               itemLabel="#{c.nombre}" itemValue="#{c.id}"></f:selectItems>
+                                               <p:selectOneMenu value="#{carreraBean.carrera.universidad.id}" style="height:29px">
+                                <f:selectItems value="#{carreraBean.universidades}" var="u"
+                                               itemLabel="#{u.nombre}" itemValue="#{u.id}"></f:selectItems>
+                            </p:selectOneMenu>
+
+                        </h:panelGrid>
+                        <p:commandButton value="#{str.buttonSave}"
+                                         action="#{carreraBean.guardar()}"></p:commandButton>
+                        <p:commandButton value="#{str.buttonDelete}"
+                                         action="#{carreraBean.eliminar()}"></p:commandButton>
+                        <p:commandButton value="#{str.buttonCancel}"
+                                         action="#{carreraBean.cancelar()}"></p:commandButton>
+
+                    </h:form>
+                </p:fieldset>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
+
+

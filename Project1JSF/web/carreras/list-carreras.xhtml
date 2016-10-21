@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>#{str.carreraListTitle}</title>
+</h:head>
+<h:body>
+	<ui:composition template="/templates/template.xhtml">
+		<ui:define name="contenido">
+			<h2>#{str.carreraListTitle}</h2>
+			<h:form>
+				<p:commandButton value="#{str.buttonAdd}"
+					action="#{carreraBean.agregar()}"></p:commandButton>
+			</h:form>
+			<p:dataTable value="#{carreraBean.carreras}" var="c">
+				<p:column headerText="#{str.action}">
+				<h:form>
+					<h:commandButton value="#{str.buttonEdit}"
+						action="#{carreraBean.editar(c)}"></h:commandButton>
+					</h:form>
+				</p:column>
+				<p:column headerText="#{str.carreraDescripcionHeader}">
+					<p:outputLabel value="#{c.descripcion}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="#{str.carreraNombreHeader}">
+					<p:outputLabel value="#{c.nombre}"></p:outputLabel>
+				</p:column>
+				<p:column headerText="#{str.carreraUbicacionHeader}">
+					<p:outputLabel value="#{c.ubicacion}"></p:outputLabel>
+				</p:column>
+				
+				<p:column headerText="#{str.carreraCantidadAlumnoHeader}">
+					<p:outputLabel value="#{c.cantidadAlumno}"></p:outputLabel>
+				</p:column>
+				
+				<p:column headerText="#{str.carreraCuatrimestreHeader}">
+					<p:outputLabel value="#{c.cuatrimestre}"></p:outputLabel>
+				</p:column>
+				
+				<p:column headerText="#{str.carreraFacultadHeader}">
+					<p:outputLabel value="#{c.facultad.nombre}"></p:outputLabel>
+				</p:column>
+                            <p:column headerText="#{str.carreraColledHeader}">
+					<p:outputLabel value="#{c.universidad.nombre}"></p:outputLabel>
+				</p:column>
+				
+			</p:dataTable>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
