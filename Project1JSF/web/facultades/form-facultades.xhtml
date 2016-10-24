@@ -6,23 +6,23 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>#{str.facultadFormTitle}</title>
+        <title>#{str.facultyFormTitle}</title>
     </h:head>
     <h:body>
         <ui:composition template="/templates/template.xhtml">
             <ui:define name="contenido">
-                <h2>#{str.facultadFormHeader}</h2>
-                <p:fieldset legend="#{str.facultadLegendForm}">
+                <h2>#{str.facultyFormHeader}</h2>
+                <p:fieldset legend="#{str.facultyLegendForm}">
                     <h:form>
                         <h:panelGrid columns="1">
-                            <p:inputText placeholder="#{str.facultadNombrePrompt}"
+                            <p:inputText placeholder="#{str.facultyNamePrompt}"
                                          value="#{facultadBean.facultad.nombre}"></p:inputText>
 
-                            <p:inputText placeholder="#{str.facultadDescripcionPrompt}"
+                            <p:inputText placeholder="#{str.facultyDescriptionPrompt}"
                                          value="#{facultadBean.facultad.descripcion}"></p:inputText>
-                            <p:inputText placeholder="#{str.facultadEdificioPrompt}"
+                            <p:inputText placeholder="#{str.facultyBuildingPrompt}"
                                          value="#{facultadBean.facultad.edificio}"></p:inputText>
-                            <p:inputText placeholder="#{str.facultadPoliticaPrompt}"
+                            <p:inputText placeholder="#{str.facultyPoliticsPrompt}"
                                          value="#{facultadBean.facultad.politica}"></p:inputText>
 
                         </h:panelGrid>

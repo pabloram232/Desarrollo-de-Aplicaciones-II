@@ -38,6 +38,7 @@ public class Carrera implements Serializable{
 	private Universidad universidad;
 
     public Carrera(Long id, String nombre, String descripcion, String ubicacion, int cantidadAlumno, int cuatrimestre, Facultad facultad, Universidad universidad) {
+        super();
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;

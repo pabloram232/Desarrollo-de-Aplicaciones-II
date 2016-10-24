@@ -25,15 +25,25 @@ public class Torta implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_torta")
     private Long id;
+    @Column(length=30)
     private String nombre;
 
     private int precio;
-
+    @Column(length=30)
     private String tipo_torta;
+
+    public Torta(Long id, String nombre, int precio, String tipo_torta) {
+        super();
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.tipo_torta = tipo_torta;
+    }
     
     public Torta(){
-        id=0L;
+        this(0L,"",0,"");
     }
+
 
     public Long getId() {
         return id;
@@ -66,6 +76,9 @@ public class Torta implements Serializable {
     public void setTipo_torta(String tipo_torta) {
         this.tipo_torta = tipo_torta;
     }
+    
+    
 
+   
     
 }

@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -26,7 +26,7 @@ public class UniversidadBean implements Serializable {
 	public String listar() {
 		UniversidadDAO dao = new UniversidadDAO();
 		try {
-			universidades = dao.getAll();
+			universidades=dao.getAll();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -72,4 +72,22 @@ public class UniversidadBean implements Serializable {
 		this.universidad= universidad;
 		return "Editar";
 	}
+
+    public List<Universidad> getUniversidades() {
+        return universidades;
+    }
+
+    public void setUniversidades(List<Universidad> universidades) {
+        this.universidades = universidades;
+    }
+
+    public Universidad getUniversidad() {
+        return universidad;
+    }
+
+    public void setUniversidad(Universidad universidad) {
+        this.universidad = universidad;
+    }
+        
+        
 }

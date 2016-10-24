@@ -18,7 +18,7 @@ public class IngredienteDAO extends DAO<Ingrediente> {
         
     }
     public Ingrediente getOneById(Ingrediente ingrediente) throws HibernateException {
-		return super.getOneById(ingrediente.getId());
+		return super.getOneById(ingrediente.getIdIngrediente());
 	}
     
 }

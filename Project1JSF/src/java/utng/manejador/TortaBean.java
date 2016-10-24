@@ -7,6 +7,8 @@ package utng.manejador;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import utng.datos.TortaDAO;
 import utng.modelo.Torta;
 
@@ -14,59 +16,16 @@ import utng.modelo.Torta;
  *
  * @author PabloRam
  */
+@ManagedBean
+@SessionScoped
 public class TortaBean implements Serializable {
-   private List<Torta> tortas;
-	private Torta torta; 
-        
-        public String listar() {
-		TortaDAO dao = new TortaDAO();
-		try {
-			tortas = dao.getAll();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "Facultades";
-	}
 
-	public String eliminar() {
-		TortaDAO dao = new TortaDAO();
-		try {
-			dao.delete(torta);
-			tortas = dao.getAll();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "Eliminar";
-	}
-	
-	public String agregar(){
-		torta = new Torta();	
-		return "Agregar";
-	}
+    private List<Torta> tortas;
+    private Torta torta;
 
-	public String guardar() {
-		TortaDAO dao = new TortaDAO();
-		try {
-			if (torta.getId() != 0) {
-				dao.update(torta);
-			} else {
-				dao.insert(torta);
-			}
-			tortas = dao.getAll();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "Guardar";
-	}
-
-	public String cancelar() {
-		return "Cancelar";
-	}
-
-	public String editar(Torta facultad){
-		this.torta = facultad;
-		return "Editar";
-	}
+    public TortaBean() {
+    }
+    
 
     public List<Torta> getTortas() {
         return tortas;
@@ -83,5 +42,55 @@ public class TortaBean implements Serializable {
     public void setTorta(Torta torta) {
         this.torta = torta;
     }
-        
+
+    public String listar() {
+        TortaDAO dao = new TortaDAO();
+        try {
+            tortas = dao.getAll();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "Tortas";
+    }
+
+    public String eliminar() {
+        TortaDAO dao = new TortaDAO();
+        try {
+            dao.delete(torta);
+            tortas = dao.getAll();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "Eliminar";
+    }
+
+   public String agregar() {
+		torta = new Torta();
+		return "Agregar";
+	}
+
+    public String guardar() {
+        TortaDAO dao = new TortaDAO();
+        try {
+            if (torta.getId() != 0) {
+                dao.update(torta);
+            } else {
+                dao.insert(torta);
+            }
+            tortas = dao.getAll();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "Guardar";
+    }
+
+    public String cancelar() {
+        return "Cancelar";
+    }
+
+    public String editar(Torta facultad) {
+        this.torta = facultad;
+        return "Editar";
+    }
+
 }

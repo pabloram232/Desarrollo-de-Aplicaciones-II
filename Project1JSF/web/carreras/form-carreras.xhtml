@@ -5,39 +5,40 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>#{str.carreraFormTitle}</title>
+        <title>#{str.careerFormTitle}</title>
     </h:head>
     <h:body>
         <ui:composition template="/templates/template.xhtml">
             <ui:define name="contenido">
-                <h2>#{str.carreraFormHeader}</h2>
-                <p:fieldset legend="#{str.carreraLegendForm}">
+                <h2>#{str.careerFormHeader}</h2>
+                <p:fieldset legend="#{str.careerLegendForm}">
                     <h:form>
                         <h:panelGrid columns="5">
 
-                            <p:inputText placeholder="#{str.carreraNombrePrompt}"
+                            <p:inputText placeholder="#{str.careerNamePrompt}"
                                          value="#{carreraBean.carrera.nombre}" 
                                          style="padding-top:0px; height:24px" ></p:inputText>
 
-                            <p:inputText placeholder="#{str.carreraDescripcionPrompt}"
+                            <p:inputText placeholder="#{str.careerDescriptionPrompt}"
                                          value="#{carreraBean.carrera.descripcion}" 
                                          style="padding-top:0px; height:24px" ></p:inputText>
 
-                            <p:inputText placeholder="#{str.carreraUbicacionPrompt}"
+                            <p:inputText placeholder="#{str.careerLocationPrompt}"
                                          value="#{carreraBean.carrera.ubicacion}" 
                                          style="padding-top:0px; height:24px" ></p:inputText>
 
-                            <p:inputText placeholder="#{str.carreraCantidadAlumnoPrompt}"
+                            <p:inputText placeholder="#{str.careerStudentsAmountPrompt}"
                                          value="#{carreraBean.carrera.cantidadAlumno}" 
                                          style="padding-top:0px; height:24px" ></p:inputText>
 
-                            <p:inputText placeholder="#{str.carreraCuatrimestrePrompt}"
+                            <p:inputText placeholder="#{str.careerQuarterPrompt}"
                                          value="#{carreraBean.carrera.cuatrimestre}" 
                                          style="padding-top:0px; height:24px" ></p:inputText>
 
                             <p:selectOneMenu value="#{carreraBean.carrera.facultad.id}" style="height:29px">
                                 <f:selectItems value="#{carreraBean.facultades}" var="c"
                                                itemLabel="#{c.nombre}" itemValue="#{c.id}"></f:selectItems>
+                            </p:selectOneMenu>
                                                <p:selectOneMenu value="#{carreraBean.carrera.universidad.id}" style="height:29px">
                                 <f:selectItems value="#{carreraBean.universidades}" var="u"
                                                itemLabel="#{u.nombre}" itemValue="#{u.id}"></f:selectItems>

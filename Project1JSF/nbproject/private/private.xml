@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/PabloRam/Documents/Project1JSF/src/java/utng/configuracion/HibernateUtil.java</file>
+            <file>file:/C:/Users/PabloRam/Documents/Project1JSF/src/java/utng/manejador/UsuarioBean.java</file>
+            <file>file:/C:/Users/PabloRam/Documents/Project1JSF/web/carreras/form-carreras.xhtml</file>
+            <file>file:/C:/Users/PabloRam/Documents/Project1JSF/web/usuarios/form-usuarios.xhtml</file>
+            <file>file:/C:/Users/PabloRam/Documents/Project1JSF/src/java/utng/datos/UsuarioDAO.java</file>
+            <file>file:/C:/Users/PabloRam/Documents/Project1JSF/src/java/utng/configuracion/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/PabloRam/Documents/Project1JSF/web/WEB-INF/faces-config.xml</file>
+            <file>file:/C:/Users/PabloRam/Documents/Project1JSF/src/java/utng/datos/DAO.java</file>
+        </group>
     </open-files>
 </project-private>

@@ -24,26 +24,37 @@ public class Ingrediente implements Serializable{
     @Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_ingrediente")
-	private Long id;
-	
+	private Long idIngrediente;
+	@Column(length = 20)
 	private String nombre;
-	
+	@Column(length = 20)
 	private String clasificacion;
-	
+	@Column( length = 20)
 	private String precio;
         @ManyToOne
 	@JoinColumn(name="id_torta")
 	private Torta torta;
+
+    public Ingrediente(Long idIngrediente, String nombre, String clasificacion, String precio, Torta torta) {
+        super();
+        this.idIngrediente = idIngrediente;
+        this.nombre = nombre;
+        this.clasificacion = clasificacion;
+        this.precio = precio;
+        this.torta = torta;
+    }
+        
+        
         public Ingrediente(){
-            id=0L;
+            this.idIngrediente = 0L;
         }
 
-    public Long getId() {
-        return id;
+    public Long getIdIngrediente() {
+        return idIngrediente;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdIngrediente(Long idIngrediente) {
+        this.idIngrediente = idIngrediente;
     }
 
     public String getNombre() {
@@ -77,6 +88,7 @@ public class Ingrediente implements Serializable{
     public void setTorta(Torta torta) {
         this.torta = torta;
     }
+        
         
         
 }

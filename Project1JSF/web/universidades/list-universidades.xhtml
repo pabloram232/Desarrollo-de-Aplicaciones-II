@@ -6,12 +6,12 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>#{str.UniversidadListTitle}</title>
+	<title>#{str.collageListTitle}</title>
 </h:head>
 <h:body>
 	<ui:composition template="/templates/template.xhtml">
 		<ui:define name="contenido">
-			<h2>#{str.UniversidadListTitle}</h2>
+			<h2>#{str.collageListTitle}</h2>
 			<h:form>
 				<p:commandButton value="#{str.buttonAdd}"
 					action="#{universidadBean.agregar()}"></p:commandButton>
@@ -24,15 +24,15 @@
 					</h:form>
 				</p:column>
 				
-				<p:column headerText="#{str.universidadNameHeader}">
+				<p:column headerText="#{str.collegeNameHeader}">
 					<p:outputLabel value="#{u.nombre}"></p:outputLabel>
 				</p:column>
 
 				
-				<p:column headerText="#{str.universidadLocationHeader}">
+				<p:column headerText="#{str.collegeLocationHeader}">
 					<p:outputLabel value="#{u.ubicacion}"></p:outputLabel>
 				</p:column>
-                            <p:column headerText="#{str.universidadTypeHeader}">
+                            <p:column headerText="#{str.collegeTypeHeader}">
 					<p:outputLabel value="#{u.tipo}"></p:outputLabel>
 				</p:column>
 				
