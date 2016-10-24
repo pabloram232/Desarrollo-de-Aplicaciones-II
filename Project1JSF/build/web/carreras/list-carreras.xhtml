@@ -6,15 +6,15 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>#{str.carreraListTitle}</title>
+	<title>#{str.careerListTitle}</title>
 </h:head>
 <h:body>
 	<ui:composition template="/templates/template.xhtml">
 		<ui:define name="contenido">
-			<h2>#{str.carreraListTitle}</h2>
+			<h2>#{str.careerListTitle}</h2>
 			<h:form>
 				<p:commandButton value="#{str.buttonAdd}"
-					action="#{carreraBean.agregar()}"></p:commandButton>
+                                                 action="#{carreraBean.agregar()}"></p:commandButton>
 			</h:form>
 			<p:dataTable value="#{carreraBean.carreras}" var="c">
 				<p:column headerText="#{str.action}">
@@ -23,28 +23,28 @@
 						action="#{carreraBean.editar(c)}"></h:commandButton>
 					</h:form>
 				</p:column>
-				<p:column headerText="#{str.carreraDescripcionHeader}">
+				<p:column headerText="#{str.careerDescriptionHeader}">
 					<p:outputLabel value="#{c.descripcion}"></p:outputLabel>
 				</p:column>
-				<p:column headerText="#{str.carreraNombreHeader}">
+				<p:column headerText="#{str.careerNameHeader}">
 					<p:outputLabel value="#{c.nombre}"></p:outputLabel>
 				</p:column>
-				<p:column headerText="#{str.carreraUbicacionHeader}">
+				<p:column headerText="#{str.careerLocationHeader}">
 					<p:outputLabel value="#{c.ubicacion}"></p:outputLabel>
 				</p:column>
 				
-				<p:column headerText="#{str.carreraCantidadAlumnoHeader}">
+				<p:column headerText="#{str.careerStudentsAmountHeader}">
 					<p:outputLabel value="#{c.cantidadAlumno}"></p:outputLabel>
 				</p:column>
 				
-				<p:column headerText="#{str.carreraCuatrimestreHeader}">
+				<p:column headerText="#{str.careerQuarterHeader}">
 					<p:outputLabel value="#{c.cuatrimestre}"></p:outputLabel>
 				</p:column>
 				
-				<p:column headerText="#{str.carreraFacultadHeader}">
+				<p:column headerText="#{str.careerFacultyHeader}">
 					<p:outputLabel value="#{c.facultad.nombre}"></p:outputLabel>
 				</p:column>
-                            <p:column headerText="#{str.carreraColledHeader}">
+                            <p:column headerText="#{str.careerCollegeHeader}">
 					<p:outputLabel value="#{c.universidad.nombre}"></p:outputLabel>
 				</p:column>
 				

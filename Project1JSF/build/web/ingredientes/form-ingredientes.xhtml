@@ -13,24 +13,19 @@
                 <h2>#{str.ingredientFormHeader}</h2>
                 <p:fieldset legend="#{str.ingredientLegendForm}">
                     <h:form>
-                        <h:panelGrid columns="5">
+                        <h:panelGrid columns="1">
 
                             <p:inputText placeholder="#{str.ingredientNamePrompt}"
-                                         value="#{ingredienteBean.ingrediente.nombre}" 
-                                         style="padding-top:0px; height:24px" ></p:inputText>
+                                         value="#{ingredienteBean.ingrediente.nombre}" ></p:inputText>
 
                             <p:inputText placeholder="#{str.ingredientClasificationPrompt}"
-                                         value="#{ingredienteBean.ingrediente.clasificacion}" 
-                                         style="padding-top:0px; height:24px" ></p:inputText>
+                                         value="#{ingredienteBean.ingrediente.clasificacion}"></p:inputText>
 
                             <p:inputText placeholder="#{str.ingredientPricePrompt}"
-                                         value="#{ingredienteBean.ingrediente.precio}" 
-                                         style="padding-top:0px; height:24px" ></p:inputText>
-
+                                         value="#{ingredienteBean.ingrediente.precio}"></p:inputText>
                             
-                            <p:selectOneMenu value="#{ingredienteBean.ingrediente.torta.id}" style="height:29px">
-                                <f:selectItems value="#{ingredienteBean.tortas}" var="i"
-                                               itemLabel="#{i.nombre}" itemValue="#{i.id}"></f:selectItems>
+                                         <p:selectOneMenu value="#{ingredienteBean.ingrediente.torta.id}">
+                                <f:selectItems value="#{ingredienteBean.tortas}" var="i"  itemLabel="#{i.nombre}" itemValue="#{i.id}"></f:selectItems>
                             </p:selectOneMenu>
 
                         </h:panelGrid>

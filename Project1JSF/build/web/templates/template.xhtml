@@ -12,38 +12,38 @@
             listener="#{plantillaBean.checkLogin()}"
             type="preRenderView"></f:event>
     </h:head>
-            <h:body>
-                <div id="pagina">
-                    <div id="header">
-                        <h1>#{str.systemTitle}</h1>
-                </div>
-                    <div id="menu">
-                        <h:form>
-                            <p:menubar>
-                                <p:menuitem value="Inicio" action="Inicio"></p:menuitem>
-                                <p:menuitem value="Usuarios" action="#{usuarioBean.listar()}"></p:menuitem>
-                                <p:menuitem value="Modulos" action="#{moduloBean.listar()}"></p:menuitem>
-                                <p:menuitem value="Roles" action="#{rolBean.listar()}"></p:menuitem>
-                                <p:menuitem value="Carreras" action="#{carreraBean.listar()}"></p:menuitem>
-                                <p:menuitem value="Facultades" action="#{facultadBean.listar()}"></p:menuitem>
-                                 <p:menuitem value="Universidad" action="#{universidadBean.listar()}"></p:menuitem>
-                                 <p:menuitem value="Ingredientes" action="#{ingredienteBean.listar()}"></p:menuitem>
-                                <p:menuitem value="Tortas" action="#{tortaBean.listar()}"></p:menuitem>
-                               
-                                <p:menuitem value="Permisos"></p:menuitem>
-                        </p:menubar>
-                        </h:form>
-                    </div>
-                    <div id="contenido">
-                        <ui:insert name="contenido">
-                            <h2>#{str.systemWelcome}</h2>
-                        </ui:insert>
-                    </div>
-                    <div id="pie">
-                        <p><strong>#{str.developer}</strong>
-                            #{str.myName}
-                        </p>
-                    </div>
-                    </div>
-            </h:body>
-            </html>
+    <h:body>
+        <div id="pagina">
+            <div id="header">
+                <h1>#{str.systemTitle}</h1>
+            </div>
+            <div id="menu">
+                <h:form>
+                    <p:menubar>
+                        <p:menuitem value="Inicio" action="Inicio"></p:menuitem>
+                        <p:menuitem value="Usuarios" action="#{usuarioBean.listar()}"></p:menuitem>
+                        <p:menuitem value="Modulos" action="#{moduloBean.listar()}"></p:menuitem>
+                        <p:menuitem value="Roles" action="#{rolBean.listar()}"></p:menuitem>
+                        <p:menuitem value="Carreras" action="#{carreraBean.listar()}"></p:menuitem>
+                        <p:menuitem value="Facultades" action="#{facultadBean.listar()}"></p:menuitem>
+                        <p:menuitem value="Universidad" action="#{universidadBean.listar()}"></p:menuitem>
+                        <p:menuitem value="Ingredientes" action="#{ingredienteBean.listar()}"></p:menuitem>
+                        <p:menuitem value="Tortas" action="#{tortaBean.listar()}"></p:menuitem>
+
+                        <p:menuitem value="Permisos"></p:menuitem>
+                    </p:menubar>
+                </h:form>
+            </div>
+            <div id="contenido">
+                <ui:insert name="contenido">
+                    <h2>#{str.systemWelcome}</h2>
+                </ui:insert>
+            </div>
+            <div id="pie">
+                <p><strong>#{str.developer}</strong>
+                    #{str.myName}
+                </p>
+            </div>
+        </div>
+    </h:body>
+</html>

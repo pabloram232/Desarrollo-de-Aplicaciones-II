@@ -14,7 +14,7 @@
 			<h2>#{str.tortaListTitle}</h2>
 			<h:form>
 				<p:commandButton value="#{str.buttonAdd}"
-					action="#{tortaBean.agregar()}"></p:commandButton>
+                                                 action="#{tortaBean.agregar()}"></p:commandButton>
 			</h:form>
 			<p:dataTable value="#{tortaBean.tortas}" var="t">
 				<p:column headerText="#{str.action}">
@@ -30,11 +30,11 @@
 
 				
 				<p:column headerText="#{str.tortaPriceHeader}">
-					<p:outputLabel value="#{t.price}"></p:outputLabel>
+                                    <p:outputLabel value="#{t.precio}"></p:outputLabel>
 				</p:column>
 				
 				<p:column headerText="#{str.tortaTypeHeader}">
-					<p:outputLabel value="#{t.tipo_bolillo}"></p:outputLabel>
+                                    <p:outputLabel value="#{t.tipo_torta}"></p:outputLabel>
 				</p:column>
 				
 				

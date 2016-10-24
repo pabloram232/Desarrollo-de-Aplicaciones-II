@@ -11,40 +11,34 @@
 <h:body>
 	<ui:composition template="/templates/template.xhtml">
 		<ui:define name="contenido">
-			<h2>#{str.carreraListTitle}</h2>
+			<h2>#{str.ingredientListTitle}</h2>
 			<h:form>
 				<p:commandButton value="#{str.buttonAdd}"
-					action="#{carreraBean.agregar()}"></p:commandButton>
+					action="#{ingredienteBean.agregar()}"></p:commandButton>
 			</h:form>
-			<p:dataTable value="#{carreraBean.carreras}" var="c">
+			<p:dataTable value="#{ingredienteBean.ingredientes}" var="i">
 				<p:column headerText="#{str.action}">
 				<h:form>
 					<h:commandButton value="#{str.buttonEdit}"
-						action="#{carreraBean.editar(c)}"></h:commandButton>
+						action="#{ingredienteBean.editar(i)}"></h:commandButton>
 					</h:form>
 				</p:column>
-				<p:column headerText="#{str.carreraDescripcionHeader}">
-					<p:outputLabel value="#{c.descripcion}"></p:outputLabel>
+				<p:column headerText="#{str.ingredientClasificationHeader}">
+					<p:outputLabel value="#{i.clasificacion}"></p:outputLabel>
 				</p:column>
-				<p:column headerText="#{str.carreraNombreHeader}">
-					<p:outputLabel value="#{c.nombre}"></p:outputLabel>
+				<p:column headerText="#{str.ingredientNameHeader}">
+					<p:outputLabel value="#{i.nombre}"></p:outputLabel>
 				</p:column>
-				<p:column headerText="#{str.carreraUbicacionHeader}">
-					<p:outputLabel value="#{c.ubicacion}"></p:outputLabel>
-				</p:column>
-				
-				<p:column headerText="#{str.carreraCantidadAlumnoHeader}">
-					<p:outputLabel value="#{c.cantidadAlumno}"></p:outputLabel>
+				<p:column headerText="#{str.ingredientPriceHeader}">
+                                    <p:outputLabel value="#{i.precio}"></p:outputLabel>
 				</p:column>
 				
-				<p:column headerText="#{str.carreraCuatrimestreHeader}">
-					<p:outputLabel value="#{c.cuatrimestre}"></p:outputLabel>
+				<p:column headerText="#{str.ingredientTortaHeader}">
+					<p:outputLabel value="#{i.torta.nombre}"></p:outputLabel>
 				</p:column>
-				
-				<p:column headerText="#{str.carreraFacultadHeader}">
-					<p:outputLabel value="#{c.facultad.nombre}"></p:outputLabel>
+                            <p:column headerText="#{str.ingredientNameHeader}">
+                                <p:outputLabel value="#{i.torta.nombre}"></p:outputLabel>
 				</p:column>
-				
 			</p:dataTable>
 		</ui:define>
 	</ui:composition>

@@ -14,17 +14,15 @@
                 <h2>#{str.tortaFormHeader}</h2>
                 <p:fieldset legend="#{str.tortaLegendForm}">
                     <h:form>
-                        <h:panelGrid columns="1">
+                        
                             <p:inputText placeholder="#{str.tortaNamePrompt}"
                                          value="#{tortaBean.torta.nombre}"></p:inputText>
 
                             <p:inputText placeholder="#{str.tortaPricePrompt}"
                                          value="#{tortaBean.torta.precio}"></p:inputText>
                             <p:inputText placeholder="#{str.tortaTypePrompt}"
-                                         value="#{tortaBean.torta.etipo_torta}"></p:inputText>
+                                         value="#{tortaBean.torta.tipo_torta}"></p:inputText>
                             
-
-                        </h:panelGrid>
                         <p:commandButton value="#{str.buttonSave}"
                                          action="#{tortaBean.guardar()}"></p:commandButton>
                         <p:commandButton value="#{str.buttonDelete}"
