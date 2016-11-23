@@ -32,7 +32,7 @@
 	</div>
 
 	<c:choose>
-		<c:when test="${mode=='MODE_HOME_H'}">
+		<c:when test="${mode=='MODE_HOME'}">
 			<div class="container">
 				<div class="jumbotron text-center" id="homeDiv">
 					<h1>Welcome to hotel</h1>
@@ -78,7 +78,7 @@
 				</div>
 			</div>
 		</c:when>
-		<c:when test="${mode=='MODE_NEW_H'|| mode=='MODE_UPDATE_H'}">
+		<c:when test="${mode=='MODE_NEW'|| mode=='MODE_UPDATE'}">
 			<div class="container text-center">
 				<h3>Manage Hotel</h3>
 				<hr />

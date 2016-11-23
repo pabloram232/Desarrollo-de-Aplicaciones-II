@@ -29,7 +29,7 @@ public class EmployeeController {
 	
 	@GetMapping("/new-employee")
 	public String newEmployee(HttpServletRequest request){
-		request.setAttribute("mode", "MODE_NEW_E");
+		request.setAttribute("mode", "MODE_NEW");
 		return "employee";
 	}
 	
@@ -45,7 +45,7 @@ public class EmployeeController {
 	@GetMapping("/update-employee")
 	public String updateEmployee(@RequestParam int id, HttpServletRequest request){
 		request.setAttribute("employee", employeeService.findOne(id));
-		request.setAttribute("mode", "MODE_UPDATE_E");
+		request.setAttribute("mode", "MODE_UPDATE");
 		return "employee";
 	}
 	

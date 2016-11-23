@@ -30,7 +30,7 @@
 	</div>
 
 	<c:choose>
-		<c:when test="${mode=='MODE_HOME_T'}">
+		<c:when test="${mode=='MODE_HOME'}">
 			<div class="container">
 				<div class="jumbotron text-center" id="homeDiv">
 					<h1>Welcome to Task</h1>

@@ -27,7 +27,7 @@ public class HotelController {
 	}
 	@GetMapping("/new-hotel")
 	public String newHotel(HttpServletRequest request){
-		request.setAttribute("mode", "MODE_NEW_H");
+		request.setAttribute("mode", "MODE_NEW");
 		return "hotel";
 	}
 	@PostMapping("/save-hotel")
@@ -40,7 +40,7 @@ public class HotelController {
 	@GetMapping("/update-hotel")
 	public String updateHotel(@RequestParam int id, HttpServletRequest request){
 		request.setAttribute("hotel", hotelService.findOne(id));
-		request.setAttribute("mode", "MODE_UPDATE_H");
+		request.setAttribute("mode", "MODE_UPDATE");
 		return "hotel";
 	}
 	
